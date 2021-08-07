@@ -1,0 +1,139 @@
+footer, .footer {
+    padding-top: 14.5rem;
+    background-color: $darkBlueFooter;
+
+    @include breakpoints-up(medium) {
+        padding-top: 10.5rem;
+    }
+
+    .fgrid {
+        margin-top: 1.5rem;
+
+        @include breakpoints-up(large) {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            "inf1 inf2 links1 links2 social"
+            "inf1 inf2 links1 links2 social"
+        }
+        @include breakpoints-up(medium) {
+            grid-template-rows: 1fr auto;
+            padding-top: 1.3rem;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__logo {
+        margin-left: 0.6875rem;
+    }
+
+    &__infotem {
+        position: relative;
+        padding-top:0px;
+        margin: 0px;
+
+        @include breakpoints-up(medium) {
+            padding-left: 0.5rem;
+            padding-right: 5rem;
+        }   
+        
+        p, h4 {
+            padding-top:0px;
+            margin-top: 0px;
+            margin-left: 2.9rem;
+        }
+
+        &.info1 {
+            @include breakpoints-up(large) {
+                grid-area: inf1;           
+            }
+        }
+
+        &.info2 {
+            @include breakpoints-up(large) {
+                grid-area: inf2;        
+            }
+        }
+    }
+
+    &__infocon {
+        position: absolute;
+
+        @include breakpoints-down(medium) {
+            margin-top: 0.3125rem;
+            margin-right: 1.75rem;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        
+        @include breakpoints-up(medium) {
+            justify-content: space-between;
+        }
+
+        a {
+            margin-bottom: 0.3125rem;
+            color: $white;
+            text-decoration: none;
+
+            &:hover {
+                font-weight: $sevenHweight;
+            }
+        }
+
+        &.col1 {    
+            @include breakpoints-down(medium) {
+                margin-top: 5rem;       
+                margin-bottom: 2.5rem;
+                margin-left: 0rem;            
+            }
+            @include breakpoints-up(large) {
+                margin-top: 1.7rem;   
+                margin-left: 2rem;
+                grid-area: links1;           
+            }        
+        }
+
+        &.col2 {
+            @include breakpoints-down(medium) {
+                margin-bottom: 1.875rem;
+            }
+            @include breakpoints-up(large) {
+                grid-area: links2;
+            }
+        }
+    }
+
+    &__socials {
+        @include breakpoints-up(medium) {
+            vertical-align: text-top;
+            grid-area: social;           
+        } 
+        @include breakpoints-down(medium) {
+            text-align: center;
+        } 
+               
+        .social {
+            padding: 0.5rem;
+            color: $white;
+
+            &:hover {
+                color: $cyan;
+                cursor: pointer;              
+            }  
+        }
+    }
+
+    .codedby {
+        flex-wrap: wrap;
+        margin-top:3rem;
+        margin-bottom: 0rem;
+        color: $white;
+        text-align: start;
+    }   
+}

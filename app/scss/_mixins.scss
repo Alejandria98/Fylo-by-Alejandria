@@ -1,0 +1,22 @@
+@media (mi-width: 64em) {
+
+}
+
+// hide for desktop viewport widths
+$breakpoints-up: ("medium": "26.8em", "large": "64em", "xlarge": "102.9em");
+
+//hide for tablet and mobile devices
+$breakpoints-down: ("small": "26.7857", "medium": "63.9375em", "large": "102.8571em");
+
+
+@mixin breakpoints-up($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoints-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}

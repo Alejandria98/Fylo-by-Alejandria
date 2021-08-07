@@ -1,0 +1,40 @@
+.header {
+    background-color: $darkBlue;
+    font-family: 'Raleway', sans-serif;
+
+    img {
+        @include breakpoints-down(medium) {
+            width: 4.900rem; 
+            height: 1.5rem;
+        }    
+        @include breakpoints-up(medium) {
+            width: 11rem;
+            height: 3rem;
+        }
+    }
+
+    &__links {        
+        a {
+            position: relative;
+            color: $white;
+            text-decoration: none;
+            transition: ease-in-out 500ms;
+            
+            &:not(:last-child) {               
+                @include breakpoints-up(medium) {
+                    margin-right: 5rem;
+                    font-size: $fontDefault;
+                }
+                @include breakpoints-down(medium) {
+                    margin-right: 1.5rem;
+                    font-size: 0.75rem;
+                }
+            }
+   
+            &:hover {
+                text-decoration: underline;
+                font-weight: $sevenHweight;
+            }        
+        }
+    }
+}

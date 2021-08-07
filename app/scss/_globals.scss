@@ -1,0 +1,115 @@
+html {
+    box-sizing: border-box; //
+    font-size: 100%; //control zoom level of the size 
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+
+  @include breakpoints-up(medium) {
+    font-size: 2.5rem;
+    line-height: 4rem;
+  }
+
+  @include breakpoints-down(medium) {
+    font-size: 1.400rem;
+    line-height: 2.1875rem;
+  }
+}
+
+a, p, h4{
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5rem;
+  font-weight: 300;
+
+  @include breakpoints-up(medium) {
+    font-size: $fontDefault;
+  }
+
+  @include breakpoints-down(medium) {
+    font-size: 0.8rem;
+  }
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: $darkBlueMain;;
+    color: $white;
+}
+
+.cta {
+  border: none;
+  border-radius: 3.125rem; 
+  padding: 1.1rem 3.6rem;
+  background-color: $blue; 
+  color: $white;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: $sevenHweight;
+  transition: ease-in-out 500ms;
+  cursor: pointer;
+
+  &:hover {
+      background-color: $cyan;
+  }
+
+  @include breakpoints-up(medium) {
+      max-width: 17rem;
+      height: 3.5rem;
+      font-size: 1rem;
+
+  }
+
+  @include breakpoints-down(medium) {      
+      min-width: 16.6875rem;
+      height: 2.9rem;
+  }
+}
+
+.container-1 {
+  position: relative;  
+  margin: 0;
+
+  @include breakpoints-up(medium) {
+    padding: 72px;
+  }
+
+  @include breakpoints-down(medium) {
+    padding: 30px 23px 35px 23px;
+  }   
+}
+
+.containermob {
+  position: relative;
+  margin: auto;
+
+  @include breakpoints-down(medium) {
+       width: 80%;
+  }
+}
+
+
+.flex {
+    display: flex;
+  
+    &-jc-sb {
+      justify-content: space-between;
+    }
+    
+    &-jc-c {
+      justify-content: center;
+    }
+    
+    &-ai-c {
+      align-items: center;
+    }
+
+    &-ai-end {
+      align-items: flex-end;
+    }
+  }

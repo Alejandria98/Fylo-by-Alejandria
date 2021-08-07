@@ -1,0 +1,112 @@
+//combined testimonials and formcta in one section
+.testiformcta {
+    position: relative;
+}
+
+.testimonials {   
+    @include breakpoints-up(medium) {
+        padding: 7rem 7rem 19rem 7rem; 
+    }   
+    @include breakpoints-down(medium) {
+        padding: 10rem 0rem 20rem 0rem;
+    } 
+
+    &__grid {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        @include breakpoints-up(medium) {
+            flex:1;
+            padding: 4rem; 
+        }
+
+        @include breakpoints-down(medium) {
+            flex-flow: row wrap;
+            padding: 0rem; 
+        }
+
+        &::before {
+            position: absolute;
+            z-index: -1;          
+            background-image: url('/images/bg-quotes.png');
+            background-repeat: no-repeat;
+            content: "";
+
+            @include breakpoints-up(medium) {
+                top: 3rem;
+                left: 4rem;
+                width: 6rem;
+                height: 3.6rem;
+                background-size: 3.6rem;
+            }
+            @include breakpoints-down(medium) {
+                top: -1.5rem;
+                left: 0.5rem;
+                width: 18rem;
+                height: 1.6rem;
+                background-size: 2.2rem;
+            }
+        }
+    }
+
+    &__item {
+        max-width: 22rem;
+        height: 100%;
+        border-radius: 0.3rem;
+        padding: 1rem 1.5rem 0.4rem 1.5rem;
+        margin-bottom: 1.2rem;
+        box-sizing: content-box;
+        box-shadow: 5px 4px $darkBlue;
+        overflow: hidden;
+        background-color: $darkBlueTesti;
+        transition: all 150ms ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        @include breakpoints-up(medium) {
+            padding: 2rem 2rem 1rem 2rem;
+            margin: 1.2rem;
+        }
+    }
+
+    &__comment {
+        margin-bottom: 1rem;
+
+        @include breakpoints-down(medium) {
+            margin-bottom: 0.6rem;
+            font-size: 0.68rem;
+            line-height: 1.2rem;
+        }
+    }
+
+    &__owner {
+        width: auto;
+        height: auto;
+    }
+
+    &__info {
+        display:inline-block;       
+    }
+
+    &__profile {
+        width: 2rem;
+        height: auto;
+        margin-right: 0.5rem;
+        border-radius: 50%;
+    }  
+
+    &__author{
+        margin-bottom: 0;
+        font-size: 0.7rem;
+        font-weight: bold;
+        line-height: 0.8125rem;
+    }
+
+    &__job{
+        margin-top: 0;
+        font-size: 0.7rem;
+    }
+}
