@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box; //
     font-size: 100%; //control zoom level of the size 
+    scroll-behavior: smooth;
 }
 
 *, *::before, *::after {
